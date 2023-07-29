@@ -53,7 +53,23 @@ const listMessage = {
       }
       chat.welcome = isEnable
       break
-      
+     case 'jarvis':
+     case 'autotalk':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+           throw false
+          }}
+      chat.jarvis = isEnable
+     break
+	case 'pmblocker':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.pmblocker = isEnable
+break	   
       case 'detect':
       case 'detector':
         if (!m.isGroup) {
@@ -199,6 +215,7 @@ const listMessage = {
 ▢ autosticker
 ▢ detect
 ▢ antidelete
+▢ jarvis
 └───────────── 
 ┌─⊷ *USERS*
 ▢ autolevelup

@@ -1,14 +1,28 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
+
 let handler = async (m, { text, usedPrefix, command }) => {
-if (!text) throw `*enter a request or an order to use the chatgpt*\n\n*—◉ 𝙴xample*\n*◉ ${usedPrefix + command}series 2022  netflix*\n*◉ ${usedPrefix + command} write a js code*`
-try {
-m.reply(`*wait sometime*`)
-let tiores = await fetch(`https://api.lolhuman.xyz/api/openai?apikey=${lolkeysapi}&text=${text}&user=user-unique-id`)
-let hasil = await tiores.json()
-m.reply(`${hasil.result}`.trim())
-} catch {
-throw `*𝙴𝚁𝚁𝙾𝚁*`
-}}
-handler.command = ['bro', 'chatgpt', 'ai', 'siri']
-handler.diamond = false
-export default handler
+  
+  if (!text && !(m.quoted && m.quoted.text)) {
+    throw `Please provide some text or quote a message to get a response.`;
+  }
+
+ 
+  if (!text && m.quoted && m.quoted.text) {
+    text = m.quoted.text;
+  }
+
+  try {
+    const response = await fetch(`https://gurugpt4-85987f3ed9b3.herokuapp.com/api/gpt4?query=${encodeURIComponent(text)}`);
+    const data = await response.json();
+    const { response: result } = data; 
+    m.reply(result.trim()); 
+  } catch (error) {
+    console.error('Error:', error); 
+    throw `*ERROR*`;
+  }
+};
+
+handler.command = ['bro', 'chatgpt', 'ai', 'siri'];
+handler.diamond = false;
+
+export default handler;
