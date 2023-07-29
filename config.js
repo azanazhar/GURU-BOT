@@ -8,7 +8,7 @@ import axios from 'axios'
 
 global.owner = [
   ['923130013796', 'Azan', true],
-  ['6281255369012', 'Ash', true], 
+  ['923374679042', 'Azan 2num', true], 
   [''] 
 ] //Number of owners
 
@@ -50,7 +50,7 @@ global.APIKeys = { // APIKey Here
 global.botname = 'ᴛʜᴇ azan-ʙᴏᴛ'
 global.premium = 'true'
 global.packname = 'Azan┃ᴮᴼᵀ' 
-global.author = '@Asliguru' 
+global.author = '*AZAN*' 
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/@cadet_azan\n' 
 global.dygp = 'https://chat.whatsapp.com/L8RniayUNXQESklPmxyi5K'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT-V1' 
