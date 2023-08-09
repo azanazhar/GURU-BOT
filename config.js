@@ -8,8 +8,8 @@ import axios from 'axios'
 
 global.owner = [
   ['923130013796', 'Azan', true],
-  ['923374679042', 'Azan 2num', true], 
-  [''] 
+  ['azanazhar120@gmail.com', 'G-Mail', true], 
+  ['Pakistan', 'Location', true] 
 ] //Number of owners
 
 global.mods = ['917605902011','32460248586'] 
